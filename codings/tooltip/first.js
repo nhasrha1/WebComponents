@@ -8,6 +8,9 @@ class Tooltip extends HTMLElement {
     this._tooltipText = "dummy tooltip text";
     this.attachShadow({mode: 'open'})
 
+    const template = document.querySelector('#tooltip-template');
+    //cloneNode true to get whole node tree of template.
+    this.shadowRoot.appendChild(template.content.cloneNode(true))
   }
 
   connectedCallback() {
